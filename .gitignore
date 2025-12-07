@@ -1,0 +1,18 @@
+# Node.js specific
+node_modules
+npm-debug.log
+.env
+dist
+build
+
+# Python specific
+__pycache__
+*.pyc
+.venv
+venv
+
+# VS Code specific
+.vscode/
+
+# Docker specific
+*.env
