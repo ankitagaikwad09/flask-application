@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask-Project Frontend</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Full Screen Background Color */
+            background-color: #007bff; /* A nice, solid blue */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff; /* White text for contrast */
+        }
+        .container {
+            background-color: #ffffff; /* White background for the form itself */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            color: #333; /* Dark text inside the form */
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .status-message {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .status-success {
+            background-color: #e8f5e9; 
+            color: #2e7d32; 
+        }
+        .status-error {
+            background-color: #ffebee; 
+            color: #d32f2f; 
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; 
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0056b3; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #004085;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frontend Application</h1>
+        
+        <% 
+        let messageClass = 'status-message';
+        if (message.includes('✅ Success')) {
+            messageClass += ' status-success';
+        } else if (message.includes('❌ Error')) {
+            messageClass += ' status-error';
+        }
+        %>
+        <p class="<%= messageClass %>">
+            <%= message %>
+        </p>
+        
+        <form action="/submit-form" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button type="submit">Send Data to Flask Backend</button>
+        </form>
+    </div>
+</body>
+</html>

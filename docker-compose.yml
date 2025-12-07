@@ -1,0 +1,26 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    networks:
+      - app-network
+    # UNCOMMENT AND REPLACE 'yourusername' WITH YOUR DOCKER HUB USERNAME
+    # image: yourusername/node-frontend:latest 
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    # UNCOMMENT AND REPLACE 'yourusername' WITH YOUR DOCKER HUB USERNAME
+    # image: yourusername/flask-backend:latest
+
+networks:
+  app-network:
+    driver: bridge
