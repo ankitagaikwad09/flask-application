@@ -17,3 +17,28 @@ Before running this project, ensure you have the following installed:
 
 ## Project Structure
 
+/flask-project
+|-- README.md
+|-- docker-compose.yaml
+|-- .gitignore
+|-- /frontend
+| |-- package.json
+| |-- server.js
+| |-- views/index.ejs
+| |-- Dockerfile
+|-- /backend
+| |-- app.py
+| |-- requirements.txt
+| |-- Dockerfile
+
+
+## Getting Started
+
+Follow these steps to get the application running locally using Docker Compose.
+
+### 1. Clone the repository
+
+```bash
+git clone github.com
+cd flask-project
+
